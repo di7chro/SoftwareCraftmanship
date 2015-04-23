@@ -14,37 +14,21 @@ public class PokerGameTest {
 	// FIXME compare_two_hands
 	// FIXME find_highest_score
 
+	// Spader 
+	// Hjärter
+	// Ruter
+	// Klöver
+	
+	// K
 	PokerGame myGame = new PokerGame();
 
 	@Test
 	public void give_me_five() throws Exception {
-
+		String hand = "S2K3R5H6S7";
+		
 		int result = myGame.getHand();
 
 		assertEquals(5, result);
 	}
 
-	@Test
-	@Ignore
-	public void get_color() throws Exception {
-		int result = myGame.getHand();
-		
-		assertEquals("Spades", result);
-	}
-
-	@Test
-	@Ignore
-	public void get_value() throws Exception {
-		int result = myGame.getHand();
-		
-		assertEquals(5, result);
-	}
-
-	@Test
-	@Ignore
-	public void draw_one_card() throws Exception {
-		int result = myGame.getHand();
-
-		assertEquals("C7", result);
-	}
 }
