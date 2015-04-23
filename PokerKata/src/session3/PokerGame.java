@@ -1,7 +1,7 @@
 package session3;
 
 /* SCORES
- * 1	Pair
+ * 1	Pair !
  * 
  * S2K3R5H6S7
  */
