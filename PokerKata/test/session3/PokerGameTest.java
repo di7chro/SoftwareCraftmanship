@@ -1,9 +1,8 @@
 package session3;
 
-import org.junit.Ignore;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
-import static org.junit.Assert.*;
+import org.junit.Test;
 
 public class PokerGameTest {
 	// FIXME get_color
@@ -23,12 +22,21 @@ public class PokerGameTest {
 	PokerGame myGame = new PokerGame();
 
 	@Test
-	public void give_me_five() throws Exception {
+	public void find_all_values() throws Exception {
 		String hand = "S2K3R5H6S7";
 		
-		int result = myGame.getHand();
+		int result = myGame.getScore(hand);
 
-		assertEquals(5, result);
+		assertEquals(0, result);
+	}
+
+	@Test
+	public void find_all_values_and_colors_gives_1() throws Exception {
+		String hand = "S2K3R5H6S7";
+		
+		int result = myGame.getScore(hand);
+
+		assertEquals(1, result);
 	}
 
 }
