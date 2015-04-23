@@ -11,11 +11,9 @@ public class BowlingScoreCalculator {
 			char roll = rolls.charAt(rollIndex);
 			if (rollIsStrike(roll)) {
 				handleStrike(rolls, rollIndex);
-			}
-			else if (rollIsSpare(roll)) {
+			} else if (rollIsSpare(roll)) {
 				handleSpare(rolls, rollIndex);
-			}
-			else {
+			} else {
 				handleRegularRoll(rolls, rollIndex);
 			}
 		}
@@ -26,8 +24,7 @@ public class BowlingScoreCalculator {
 		sum += getValueForRolls(rolls, i);
 		if (firstRoll == true) {
 			firstRoll = false;
-		}
-		else {
+		} else {
 			countFrames++;
 			firstRoll = true;
 		}
@@ -65,11 +62,9 @@ public class BowlingScoreCalculator {
 		char roll = rolls.charAt(rollIndex);
 		if (rollIsStrike(roll)) {
 			return 10;
-		}
-		else if (roll == '-') {
+		} else if (roll == '-') {
 			return 0;
-		}
-		else {
+		} else {
 			return Integer.parseInt(roll + "");
 		}
 	}
