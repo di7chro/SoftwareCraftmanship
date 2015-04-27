@@ -1,4 +1,4 @@
-/*
+/**
  * PokerGame.java
  * 
  * Course in Software Craftsmenship @ Högskolan Väst
