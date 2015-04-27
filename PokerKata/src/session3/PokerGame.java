@@ -156,10 +156,10 @@ public class PokerGame {
 	}
 
 	/**
-	 * Extracts all the values from the given String (hand)
+	 * Extracts all the colors from the given String (hand)
 	 * 
 	 * @param hand
-	 * @return The values of all the cards
+	 * @return The colors of all the cards
 	 */
 	private char[] getColors(String hand) {
 		char[] colors = "".toCharArray();
@@ -175,11 +175,10 @@ public class PokerGame {
 	}
 
 	/**
-	 * Finds a pair by looking if two cards next to each other has the same
-	 * value
+	 * Finds a Flush by looking if all cards has the same colors
 	 * 
 	 * @param hand
-	 * @return true if there is a pair, otherwise false
+	 * @return true if there is a flush, otherwise false
 	 */
 	private boolean findFlush(String hand) {
 		char[] colors = getColors(hand);
