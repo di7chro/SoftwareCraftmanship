@@ -1,17 +1,16 @@
+/*
+ * PokerGame.java
+ * 
+ * Course in Software Craftsmenship @ Högskolan Väst
+ * Poker game kata for testing TDD, Test Driven Development
+ * 
+ * 2015-04-27
+ */
+
 package session3;
 
 import java.util.Arrays;
 
-/* SCORES
-<<<<<<< HEAD
- * 2	Pair
- * 3	Three Of A Kind
-=======
- * 1	Pair !
->>>>>>> origin/master
- * 
- * S2K3R5H6S7
- */
 public class PokerGame {
 	public int getScore(String hand) {
 		int score = 0;

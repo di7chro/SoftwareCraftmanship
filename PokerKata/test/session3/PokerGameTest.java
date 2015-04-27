@@ -1,3 +1,12 @@
+/*
+ * PokerGame.java
+ * 
+ * Course in Software Craftsmenship @ Högskolan Väst
+ * Poker game kata for testing TDD, Test Driven Development
+ * 
+ * 2015-04-27
+ */
+
 package session3;
 
 import static org.junit.Assert.assertEquals;
@@ -5,20 +14,6 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 public class PokerGameTest {
-	// FIXME get_color
-	// FIXME get_value
-	// FIXME draw_one_card
-	// FIXME draw_five_cards
-	// FIXME draw_one_hand
-	// FIXME compare_two_hands
-	// FIXME find_highest_score
-
-	// Spader
-	// Hjärter
-	// Ruter
-	// Klöver
-
-	// K
 	PokerGame myGame = new PokerGame();
 
 	@Test
