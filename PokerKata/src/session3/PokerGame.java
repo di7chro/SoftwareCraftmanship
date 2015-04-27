@@ -21,7 +21,7 @@ public class PokerGame {
 	public int getScore(String hand) {
 		int score = 0;
 
-		if (findPrison(hand) == true)
+		if (findFullHouse(hand) == true)
 			score = 9;
 		else if (findFourOfAKind(hand) == true)
 			score = 7;
@@ -119,14 +119,14 @@ public class PokerGame {
 	}
 
 	/**
-	 * Finds a prison (kåk = prison). We have a prison if the first and last two
+	 * Finds a Full house. We have a Full House if the first and last two
 	 * cards are a pair, and the middle card has same value as either of them
 	 * (is three of a kind)
 	 * 
 	 * @param hand
-	 * @return true if there is a prison, otherwise false
+	 * @return true if there is a Full House, otherwise false
 	 */
-	private boolean findPrison(String hand) {
+	private boolean findFullHouse(String hand) {
 		char[] values = getValues(hand);
 
 		if (values[0] == values[1] && values[3] == values[4]
