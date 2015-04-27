@@ -3,8 +3,12 @@ package session3;
 import java.util.Arrays;
 
 /* SCORES
+<<<<<<< HEAD
  * 2	Pair
  * 3	Three Of A Kind
+=======
+ * 1	Pair !
+>>>>>>> origin/master
  * 
  * S2K3R5H6S7
  */
