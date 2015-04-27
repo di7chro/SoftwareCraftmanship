@@ -6,19 +6,19 @@ Här samlas all källkod som tillverkas i kursen Software Craftmanship som går 
 Här skapades den första katan, String Calculator
 
 Coding Dojo
-    En plats dit man går för att träna 
-    Övning, delibirate practice
-    Smart vs Professional (Readable, Maintainable, Changeable)
+    -En plats dit man går för att träna 
+    -Övning, delibirate practice
+    -Smart vs Professional (Readable, Maintainable, Changeable)
 Agilt
-    Sustainable Pace
-    äautomatiserade tester mycket viktigt idag
+    -Sustainable Pace
+    -Automatiserade tester mycket viktigt idag
 
 TestDriven development by example av Kent Beck
-    http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
-    Bra på att demonstrera hur TDD går till i praktiken
+    -http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
+    -Bra på att demonstrera hur TDD går till i praktiken
 
 Nytta med TDD
-    More confident, productive, reliable, agile
+    -More confident, productive, reliable, agile
     
 
 ## 2. Forts + ObjectOrientering
@@ -26,16 +26,16 @@ Här skapade vi den andra katan, Bowling Game
 JUnit test Class Lifecycle
 
 Svaret från övningen:
-static_before
-Hello
-before
-one
-after
-Hello
-before
-two
-after
-static_after
+-static_before
+-Hello
+-before
+-one
+-after
+-Hello
+-before
+-two
+-after
+-static_after
 
 En ny test skapas i JUnit som en ny klass med methoden som enda del i denna klass, som anropas. Därför skapas klassen flera gånger.
 
