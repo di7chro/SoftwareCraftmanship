@@ -62,7 +62,7 @@ public class PokerGameTest {
 	}
 	
 	@Test
-	public void prison_gives_9() throws Exception {
+	public void full_house_gives_9() throws Exception {
 		String hand = "S2K2R2H7S7";
 
 		int result = myGame.getScore(hand);
