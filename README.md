@@ -40,11 +40,11 @@ static_after
 En ny test skapas i JUnit som en ny klass med methoden som enda del i denna klass, som anropas. Därför skapas klassen flera gånger.
 
 2. Förkortningar på bra tester
-F ast
-I ndependant
-R epeatable
-S elf validation
-T imely
+ F ast
+ I ndependant
+ R epeatable
+ S elf validation
+ T imely
 
 A utomatic
 T horough
