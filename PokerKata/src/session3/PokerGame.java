@@ -15,14 +15,18 @@ public class PokerGame {
 	public int getScore(String hand) {
 		int score = 0;
 
-		if (findPair(hand) == true)
-			score = 2;
-		if (findThreeOfAKind(hand) == true)
-			score = 3;
-		if (findTwoPairs(hand) == true)
-			score = 6;
-		if (findFourOfAKind(hand) == true)
+		if (findPrison(hand) == true)
+			score = 9;
+		else if (findFourOfAKind(hand) == true)
 			score = 7;
+		else if (findTwoPairs(hand) == true)
+			score = 6;
+		else if (findThreeOfAKind(hand) == true)
+			score = 3;
+		else if (findPair(hand) == true)
+			score = 2;
+		else
+			score = 0;
 		return score;
 	}
 
@@ -77,6 +81,17 @@ public class PokerGame {
 					&& values[i + 2] == values[i + 3])
 				return true;
 		}
+		return false;
+	}
+
+	private boolean findPrison(String hand) {
+		char[] values = getValues(hand);
+
+		// We have a prison if the first and last two cards are a pair, and the
+		// middle card has same value as either of them (is three of a kind)
+		if (values[0] == values[1] && values[3] == values[4]
+				&& (values[0] == values[2] || values[2] == values[3]))
+			return true;
 		return false;
 	}
 

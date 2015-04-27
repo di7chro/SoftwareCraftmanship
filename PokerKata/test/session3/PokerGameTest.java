@@ -60,4 +60,13 @@ public class PokerGameTest {
 
 		assertEquals(7, result);
 	}
+	
+	@Test
+	public void prison_gives_9() throws Exception {
+		String hand = "S2K2R2H7S7";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(9, result);
+	}
 }
