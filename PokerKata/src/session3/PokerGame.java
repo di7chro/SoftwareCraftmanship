@@ -21,7 +21,9 @@ public class PokerGame {
 	public int getScore(String hand) {
 		int score = 0;
 
-		if (findFullHouse(hand) == true)
+		if (findFlush(hand) == true)
+			score = 10;
+		else if (findFullHouse(hand) == true)
 			score = 9;
 		else if (findFourOfAKind(hand) == true)
 			score = 7;
@@ -92,8 +94,7 @@ public class PokerGame {
 					}
 				}
 			}
-		}
-		catch (ArrayIndexOutOfBoundsException e) {
+		} catch (ArrayIndexOutOfBoundsException e) {
 			return false;
 		}
 		return false;
@@ -119,9 +120,9 @@ public class PokerGame {
 	}
 
 	/**
-	 * Finds a Full house. We have a Full House if the first and last two
-	 * cards are a pair, and the middle card has same value as either of them
-	 * (is three of a kind)
+	 * Finds a Full house. We have a Full House if the first and last two cards
+	 * are a pair, and the middle card has same value as either of them (is
+	 * three of a kind)
 	 * 
 	 * @param hand
 	 * @return true if there is a Full House, otherwise false
@@ -154,4 +155,38 @@ public class PokerGame {
 		return values;
 	}
 
+	/**
+	 * Extracts all the values from the given String (hand)
+	 * 
+	 * @param hand
+	 * @return The values of all the cards
+	 */
+	private char[] getColors(String hand) {
+		char[] colors = "".toCharArray();
+		String temp = "";
+
+		// Find all values
+		for (int i = 0; i < hand.length() - 1; i += 2) {
+			temp += hand.charAt(i);
+		}
+		colors = temp.toCharArray();
+		Arrays.sort(colors);
+		return colors;
+	}
+
+	/**
+	 * Finds a pair by looking if two cards next to each other has the same
+	 * value
+	 * 
+	 * @param hand
+	 * @return true if there is a pair, otherwise false
+	 */
+	private boolean findFlush(String hand) {
+		char[] colors = getColors(hand);
+
+		// Loop again, find pair
+		if (colors[0] == colors[1] && colors[1] == colors[2] && colors[2] == colors[3] && colors[3] == colors[4])
+			return true;
+		return false;
+	}
 }

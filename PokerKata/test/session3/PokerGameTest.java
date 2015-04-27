@@ -60,7 +60,7 @@ public class PokerGameTest {
 
 		assertEquals(7, result);
 	}
-	
+
 	@Test
 	public void full_house_gives_9() throws Exception {
 		String hand = "S2K2R2H7S7";
@@ -68,5 +68,14 @@ public class PokerGameTest {
 		int result = myGame.getScore(hand);
 
 		assertEquals(9, result);
+	}
+
+	@Test
+	public void flush_gives_10() throws Exception {
+		String hand = "S2S6S7S8S9";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(10, result);
 	}
 }
