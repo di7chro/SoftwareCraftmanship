@@ -6,19 +6,19 @@ Här samlas all källkod som tillverkas i kursen Software Craftmanship som går 
 Här skapades den första katan, String Calculator
 
 Coding Dojo
-    -   En plats dit man går för att träna 
-    -   Övning, delibirate practice
-    -   Smart vs Professional (Readable, Maintainable, Changeable)
+-   En plats dit man går för att träna 
+-   Övning, delibirate practice
+-   Smart vs Professional (Readable, Maintainable, Changeable)
 Agilt
-    -   Sustainable Pace
-    -   Automatiserade tester mycket viktigt idag
+-   Sustainable Pace
+-   Automatiserade tester mycket viktigt idag
 
 TestDriven development by example av Kent Beck
-    -   http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
-    -   Bra på att demonstrera hur TDD går till i praktiken
+-   http://www.amazon.com/Test-Driven-Development-By-Example/dp/0321146530
+-   Bra på att demonstrera hur TDD går till i praktiken
 
 Nytta med TDD
-    -   More confident, productive, reliable, agile
+-   More confident, productive, reliable, agile
     
 
 ## 2. Forts + ObjectOrientering
@@ -40,25 +40,27 @@ Svaret från övningen:
 En ny test skapas i JUnit som en ny klass med methoden som enda del i denna klass, som anropas. Därför skapas klassen flera gånger.
 
 2. Förkortningar på bra tester
- F ast
- I ndependant
- R epeatable
- S elf validation
- T imely
+-   F ast
+-   I ndependant
+-   R epeatable
+-   S elf validation
+-   T imely
 
-A utomatic
-T horough
-R epeatable
-I ndependant
-P rofessional
+Eller den här:
+-   A utomatic
+-   T horough
+-   R epeatable
+-   I ndependant
+-   P rofessional
 
-R ight (testa rätt sak)
-B oundries condition (testa gränsfallen)
-I nverse condition (kan man testa motsatsen av testet)
-C rosscheck (finns det annat sätt att komma till samma slutsats)
-E xceptions (hur hanteras dessa)
-P erformance
-S et ()
+Eller denna variant:
+-   R ight (testa rätt sak)
+-   B oundries condition (testa gränsfallen)
+-   I nverse condition (kan man testa motsatsen av testet)
+-   C rosscheck (finns det annat sätt att komma till samma slutsats)
+-   E xceptions (hur hanteras dessa)
+-   P erformance
+-   S et ()
 
 Black-Box och White-Box testing
 
