@@ -78,4 +78,13 @@ public class PokerGameTest {
 
 		assertEquals(10, result);
 	}
+
+	@Test
+	public void straight_gives_12() throws Exception {
+		String hand = "K2S3H4R5R6";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(12, result);
+	}
 }

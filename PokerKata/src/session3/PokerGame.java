@@ -23,7 +23,9 @@ public class PokerGame {
 		char[] values = getValues(hand);
 		char[] colors = getColors(hand);
 
-		if (findFlush(colors) == true)
+		if (findStraight(values) == true)
+			score = 12;
+		else if (findFlush(colors) == true)
 			score = 10;
 		else if (findFullHouse(values) == true)
 			score = 9;
@@ -147,6 +149,20 @@ public class PokerGame {
 				&& colors[2] == colors[3] && colors[3] == colors[4])
 			return true;
 		return false;
+	}
+
+	/**
+	 * Finds a Straight by looking if the value of the next card is 1 higher
+	 * throughout all the cards
+	 * 
+	 * @param values
+	 * @return
+	 */
+	private boolean findStraight(char[] values) {
+		for (int i = 0; i < values.length - 1; i++)
+			if (values[i + 1] != values[i] + 1)
+				return false;
+		return true;
 	}
 
 	/**
