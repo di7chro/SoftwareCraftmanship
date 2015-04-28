@@ -20,18 +20,20 @@ import java.util.Arrays;
 public class PokerGame {
 	public int getScore(String hand) {
 		int score = 0;
+		char[] values = getValues(hand);
+		char[] colors = getColors(hand);
 
-		if (findFlush(hand) == true)
+		if (findFlush(colors) == true)
 			score = 10;
-		else if (findFullHouse(hand) == true)
+		else if (findFullHouse(values) == true)
 			score = 9;
-		else if (findFourOfAKind(hand) == true)
+		else if (findFourOfAKind(values) == true)
 			score = 7;
-		else if (findTwoPairs(hand) == true)
+		else if (findTwoPairs(values) == true)
 			score = 6;
-		else if (findThreeOfAKind(hand) == true)
+		else if (findThreeOfAKind(values) == true)
 			score = 3;
-		else if (findPair(hand) == true)
+		else if (findPair(values) == true)
 			score = 2;
 		else
 			score = 0;
@@ -45,8 +47,7 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a pair, otherwise false
 	 */
-	private boolean findPair(String hand) {
-		char[] values = getValues(hand);
+	private boolean findPair(char[] values) {
 
 		// Loop again, find pair
 		for (int i = 0; i < values.length - 1; i++) {
@@ -63,8 +64,7 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a Three of a kind, otherwise false
 	 */
-	private boolean findThreeOfAKind(String hand) {
-		char[] values = getValues(hand);
+	private boolean findThreeOfAKind(char[] values) {
 
 		// Loop again, find three of a kind
 		for (int i = 0; i < values.length - 2; i++) {
@@ -81,8 +81,7 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is two pairs, otherwise false
 	 */
-	private boolean findTwoPairs(String hand) {
-		char[] values = getValues(hand);
+	private boolean findTwoPairs(char[] values) {
 
 		try {
 			// Loop again, find pair
@@ -94,7 +93,8 @@ public class PokerGame {
 					}
 				}
 			}
-		} catch (ArrayIndexOutOfBoundsException e) {
+		}
+		catch (ArrayIndexOutOfBoundsException e) {
 			return false;
 		}
 		return false;
@@ -107,8 +107,7 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a Four of a kind, otherwise false
 	 */
-	private boolean findFourOfAKind(String hand) {
-		char[] values = getValues(hand);
+	private boolean findFourOfAKind(char[] values) {
 
 		// Loop again, find three of a kind
 		for (int i = 0; i < values.length - 2; i++) {
@@ -127,11 +126,25 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a Full House, otherwise false
 	 */
-	private boolean findFullHouse(String hand) {
-		char[] values = getValues(hand);
+	private boolean findFullHouse(char[] values) {
 
 		if (values[0] == values[1] && values[3] == values[4]
 				&& (values[0] == values[2] || values[2] == values[3]))
+			return true;
+		return false;
+	}
+
+	/**
+	 * Finds a Flush by looking if all cards has the same colors
+	 * 
+	 * @param hand
+	 * @return true if there is a flush, otherwise false
+	 */
+	private boolean findFlush(char[] colors) {
+
+		// Loop again, find pair
+		if (colors[0] == colors[1] && colors[1] == colors[2]
+				&& colors[2] == colors[3] && colors[3] == colors[4])
 			return true;
 		return false;
 	}
@@ -174,18 +187,4 @@ public class PokerGame {
 		return colors;
 	}
 
-	/**
-	 * Finds a Flush by looking if all cards has the same colors
-	 * 
-	 * @param hand
-	 * @return true if there is a flush, otherwise false
-	 */
-	private boolean findFlush(String hand) {
-		char[] colors = getColors(hand);
-
-		// Loop again, find pair
-		if (colors[0] == colors[1] && colors[1] == colors[2] && colors[2] == colors[3] && colors[3] == colors[4])
-			return true;
-		return false;
-	}
 }
