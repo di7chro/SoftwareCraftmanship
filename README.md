@@ -68,6 +68,26 @@ Inom WhiteBox-test har man möjligheten att kunna titta in i lådan för att se 
 
 ## 3. Test Double
 Inför detta pas gjorde vi som hemarbete den tredje katan, Poker Kata
+Nu skall den göras på riktigt.
+
+### Klassdiagram
+
+#### Kort
+-   Färg
+-   Värde
+  
+#### Kortlek
+-   Kort
+-   Blanda
+
+#### Spelare
+-   5 Kort
+
+#### Spel
+-   Kortlek
+-   Regler
+-   Spelare
+-   Jämför händer
 
 ## 4. Clean Code + ATDD
 

@@ -39,4 +39,32 @@ public class PokerGameTest {
 		
 		assertEquals("White", winningPlayer.getPlayerName());
 	}
+
+	@Test
+	public void straight_gives_12() throws Exception {
+		String hand = "K2S3H4R5R6";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(12, result);
+	}
+
+	@Test
+	public void straight_flush_gives_14() throws Exception {
+		String hand = "K2K3K4K5K6";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(14, result);
+	}
+
+	@Test
+	@Ignore
+	public void royal_straight_flush_gives_16() throws Exception {
+		String hand = "R10RKRDRKRE";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(16, result);
+	}
 }
