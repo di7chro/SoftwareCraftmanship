@@ -19,7 +19,7 @@ public class PokerGameTest {
 
 	@Test
 	public void nothing_gives_0() throws Exception {
-		String hand = "S2K3R5H6S7";
+		String hand = "S2H3C4D5S7";
 
 		int result = myGame.getScore(hand);
 
@@ -27,8 +27,17 @@ public class PokerGameTest {
 	}
 
 	@Test
-	public void single_pair_gives_2() throws Exception {
-		String hand = "S2K2R5H6S7";
+	public void pair_gives_1() throws Exception {
+		String hand = "S3H3C4D5S8";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(1, result);
+	}
+
+	@Test
+	public void two_pairs_gives_2() throws Exception {
+		String hand = "S3H3C9D5S5";
 
 		int result = myGame.getScore(hand);
 
@@ -37,7 +46,7 @@ public class PokerGameTest {
 
 	@Test
 	public void three_of_a_kind_gives_3() throws Exception {
-		String hand = "S2K2R2H6S7";
+		String hand = "S8H8C8D3S4";
 
 		int result = myGame.getScore(hand);
 
@@ -45,8 +54,29 @@ public class PokerGameTest {
 	}
 
 	@Test
-	public void two_pairs_gives_6() throws Exception {
-		String hand = "S2K2R5H7S7";
+	@Ignore
+	public void straight_gives_4() throws Exception {
+		String hand = "K2S3H4R5R6";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(4, result);
+	}
+
+	@Test
+	@Ignore
+	public void flush_gives_5() throws Exception {
+		String hand = "S2S6S7S8S9";
+
+		int result = myGame.getScore(hand);
+
+		assertEquals(5, result);
+	}
+
+	@Test
+	@Ignore
+	public void full_house_gives_6() throws Exception {
+		String hand = "S2K2R2H7S7";
 
 		int result = myGame.getScore(hand);
 
@@ -54,6 +84,7 @@ public class PokerGameTest {
 	}
 
 	@Test
+	@Ignore
 	public void four_of_a_kind_gives_7() throws Exception {
 		String hand = "S2K2R2H2S7";
 
@@ -63,48 +94,22 @@ public class PokerGameTest {
 	}
 
 	@Test
-	public void full_house_gives_9() throws Exception {
-		String hand = "S2K2R2H7S7";
-
-		int result = myGame.getScore(hand);
-
-		assertEquals(9, result);
-	}
-
-	@Test
-	public void flush_gives_10() throws Exception {
-		String hand = "S2S6S7S8S9";
-
-		int result = myGame.getScore(hand);
-
-		assertEquals(10, result);
-	}
-
-	@Test
-	public void straight_gives_12() throws Exception {
-		String hand = "K2S3H4R5R6";
-
-		int result = myGame.getScore(hand);
-
-		assertEquals(12, result);
-	}
-
-	@Test
-	public void straight_flush_gives_14() throws Exception {
+	@Ignore
+	public void straight_flush_gives_8() throws Exception {
 		String hand = "K2K3K4K5K6";
 
 		int result = myGame.getScore(hand);
 
-		assertEquals(14, result);
+		assertEquals(8, result);
 	}
 
 	@Test
 	@Ignore
-	public void royal_straight_flush_gives_16() throws Exception {
+	public void royal_straight_flush_gives_9() throws Exception {
 		String hand = "R10RKRDRKRE";
 
 		int result = myGame.getScore(hand);
 
-		assertEquals(16, result);
+		assertEquals(9, result);
 	}
 }

@@ -16,29 +16,39 @@ import java.util.Arrays;
  * 
  * @author crille
  *
+ *         Spades Hearts Clubs Diamonds
+ * 
+ *         Jack Queen King Ace /* 8. Straight Flush 7. Four of a kind 6. Full
+ *         House 5. Flush 4. Straight 3. Three of a Kind 2. Two Pairs 1. Pair 0.
+ *         Nothing
  */
+
 public class PokerGame {
+	static int NUM_OF_CARDS = 5;
+
 	public int getScore(String hand) {
 		int score = 0;
-		char[] values = getValues(hand);
+		int[] values = new int[NUM_OF_CARDS];
 		char[] colors = getColors(hand);
 
+		values = getValues(hand);
+
 		if (findStraightFlush(values, colors) == true)
-			score = 14;
-		else if (findStraight(values) == true)
-			score = 12;
-		else if (findFlush(colors) == true)
-			score = 10;
-		else if (findFullHouse(values) == true)
-			score = 9;
+			score = 8;
 		else if (findFourOfAKind(values) == true)
 			score = 7;
-		else if (findTwoPairs(values) == true)
+		else if (findFullHouse(values) == true)
 			score = 6;
+		else if (findFlush(colors) == true)
+			score = 5;
+		else if (findStraight(values) == true)
+			score = 4;
 		else if (findThreeOfAKind(values) == true)
 			score = 3;
-		else if (findPair(values) == true)
+		else if (findTwoPairs(values) == true)
 			score = 2;
+		else if (findPair(values) == true)
+			score = 1;
 		else
 			score = 0;
 		return score;
@@ -51,10 +61,10 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a pair, otherwise false
 	 */
-	private boolean findPair(char[] values) {
+	private boolean findPair(int[] values) {
 
 		// Loop again, find pair
-		for (int i = 0; i < values.length - 1; i++) {
+		for (int i = 0; i < NUM_OF_CARDS - 1; i++) {
 			if (values[i] == values[i + 1])
 				return true;
 		}
@@ -68,10 +78,10 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a Three of a kind, otherwise false
 	 */
-	private boolean findThreeOfAKind(char[] values) {
+	private boolean findThreeOfAKind(int[] values) {
 
 		// Loop again, find three of a kind
-		for (int i = 0; i < values.length - 2; i++) {
+		for (int i = 0; i < NUM_OF_CARDS - 2; i++) {
 			if (values[i] == values[i + 1] && values[i + 1] == values[i + 2])
 				return true;
 		}
@@ -85,11 +95,11 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is two pairs, otherwise false
 	 */
-	private boolean findTwoPairs(char[] values) {
+	private boolean findTwoPairs(int[] values) {
 
 		try {
 			// Loop again, find pair
-			for (int i = 0; i < values.length - 1; i++) {
+			for (int i = 0; i < NUM_OF_CARDS - 1; i++) {
 				if (values[i] == values[i + 1]) {
 					if (values[i + 2] == values[i + 3]
 							|| values[i + 3] == values[i + 4]) {
@@ -111,10 +121,10 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a Four of a kind, otherwise false
 	 */
-	private boolean findFourOfAKind(char[] values) {
+	private boolean findFourOfAKind(int[] values) {
 
 		// Loop again, find three of a kind
-		for (int i = 0; i < values.length - 2; i++) {
+		for (int i = 0; i < NUM_OF_CARDS - 2; i++) {
 			if (values[i] == values[i + 1] && values[i + 1] == values[i + 2]
 					&& values[i + 2] == values[i + 3])
 				return true;
@@ -130,7 +140,7 @@ public class PokerGame {
 	 * @param hand
 	 * @return true if there is a Full House, otherwise false
 	 */
-	private boolean findFullHouse(char[] values) {
+	private boolean findFullHouse(int[] values) {
 
 		if (values[0] == values[1] && values[3] == values[4]
 				&& (values[0] == values[2] || values[2] == values[3]))
@@ -160,8 +170,8 @@ public class PokerGame {
 	 * @param values
 	 * @return true if there is a straight, otherwise false
 	 */
-	private boolean findStraight(char[] values) {
-		for (int i = 0; i < values.length - 1; i++)
+	private boolean findStraight(int[] values) {
+		for (int i = 0; i < NUM_OF_CARDS - 1; i++)
 			if (values[i + 1] != values[i] + 1)
 				return false;
 		return true;
@@ -174,8 +184,8 @@ public class PokerGame {
 	 * @param colors
 	 * @return
 	 */
-	private boolean findStraightFlush(char[] values, char[] colors) {
-		for (int i = 0; i < values.length - 1; i++)
+	private boolean findStraightFlush(int[] values, char[] colors) {
+		for (int i = 0; i < NUM_OF_CARDS - 1; i++)
 			if (values[i + 1] != values[i] + 1)
 				return false;
 		if (colors[0] == colors[4])
@@ -190,19 +200,61 @@ public class PokerGame {
 	 * @param hand
 	 * @return The values of all the cards
 	 */
-	private char[] getValues(String hand) {
-		char[] values = "".toCharArray();
-		String temp = "";
+	private int[] getValues(String hand) {
+		int[] values = new int[NUM_OF_CARDS];
 
+		// Remove all colors
+		hand = hand.replace("S", "");
+		hand = hand.replace("H", "");
+		hand = hand.replace("C", "");
+		hand = hand.replace("D", "");
+
+		// J Q K A
 		// Find all values
-		for (int i = 1; i < hand.length(); i += 2) {
-			temp += hand.charAt(i);
+		for (int i = 0; i < NUM_OF_CARDS; i++) {
+			if (hand.charAt(i) == '2')
+				values[i] = 2;
+			else if (hand.charAt(i) == '3')
+				values[i] = 3;
+			else if (hand.charAt(i) == '4')
+				values[i] = 4;
+			else if (hand.charAt(i) == '5')
+				values[i] = 5;
+			else if (hand.charAt(i) == '6')
+				values[i] = 6;
+			else if (hand.charAt(i) == '7')
+				values[i] = 7;
+			else if (hand.charAt(i) == '8')
+				values[i] = 8;
+			else if (hand.charAt(i) == '9')
+				values[i] = 9;
+			else if (hand.charAt(i) == '1') {
+				values[i] = 10;
+				i++;
+			}
+			else if (hand.charAt(i) == 'J')
+				values[i] = 11;
+			else if (hand.charAt(i) == 'Q')
+				values[i] = 12;
+			else if (hand.charAt(i) == 'K')
+				values[i] = 13;
+			else if (hand.charAt(i) == 'A')
+				values[i] = 14;
 		}
-		values = temp.toCharArray();
 		Arrays.sort(values);
 		return values;
 	}
 
+	/*
+	 * Gammal char-version
+	 * 
+	 * private char[] getValues(String hand) { char[] values = "".toCharArray();
+	 * String temp = "";
+	 * 
+	 * // Find all values for (int i = 1; i < hand.length(); i += 2) { temp +=
+	 * hand.charAt(i); } values = temp.toCharArray(); Arrays.sort(values);
+	 * return values; }
+	 */
 	/**
 	 * Extracts all the colors from the given String (hand)
 	 * 
