@@ -1,14 +1,6 @@
-/**
- * PokerGame.java
- * 
- * Course in Software Craftsmenship @ Högskolan Väst
- * Poker game kata for testing TDD, Test Driven Development
- * 
- * 2015-04-27
- */
-
 package session3;
 
+<<<<<<< HEAD
 import java.util.Arrays;
 
 /**
@@ -268,10 +260,23 @@ public class PokerGame {
 		// Find all values
 		for (int i = 0; i < hand.length() - 1; i += 2) {
 			temp += hand.charAt(i);
+=======
+public class PokerGame {
+
+	public Player calculateWinningPlayer(Player left, Player right) {
+		
+		Player twoPairResult = TwoPairRule.compare(left, right);
+		if(twoPairResult != null){
+			return twoPairResult;
 		}
-		colors = temp.toCharArray();
-		Arrays.sort(colors);
-		return colors;
+		
+		Player pairResult = PairRule.compare(left, right);
+		if(pairResult != null){
+			return pairResult;
+>>>>>>> origin/master
+		}
+		
+		return HighCardRule.compare(left, right);
 	}
 
 }
