@@ -1,7 +1,8 @@
 package session3;
 
-import src.session3.Player;
-import src.session3.TwoPairRule;
+import static org.junit.Assert.*;
+
+import org.junit.Test;
 
 public class TwoPairRuleTest {
 
@@ -26,7 +27,7 @@ public class TwoPairRuleTest {
 		assertEquals("Green", winningPlayer.getPlayerName());
 
 	}
-
+	
 	@Test
 	public void first_pair_tie_second_pair_highest_wins() throws Exception {
 		Player green = new Player("Green", "9S 9C 6D 6H AH");
@@ -34,6 +35,6 @@ public class TwoPairRuleTest {
 
 		Player winningPlayer = TwoPairRule.compare(white, green);
 
-		assertEquals("Green", winningPlayer.getPlayerName());
+		assertEquals("Green", winningPlayer.getPlayerName());		
 	}
 }
