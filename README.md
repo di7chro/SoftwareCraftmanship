@@ -89,6 +89,17 @@ Nu skall den göras på riktigt.
 -   Spelare
 -   Jämför händer
 
-## 4. Clean Code + ATDD
+## 4. Intro till Test Doubles
+-   Unit-tester prövar en isolerad enhet
+-   När en klass dependar på andra (DOC, Dependent on collaborators) behöver vi isolera dem från testerna
+-   Test doubles är stand-ins för DOC och gör att vi kan isolera units för att testa ordentligt
+   
+### Test Doubles
+-   Fake
+--  fdgs
+-   Stub
+-   Mock
+-   Spies
+
 
 ## 5. Refactor mot patterns
