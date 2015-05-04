@@ -100,5 +100,11 @@ Nu skall den göras på riktigt.
 -   Mock. Ramverk används. KAn preparera vissa objekt för att returnera något känt. Medtod-anrop.  
 -   Spies. Övervakar vad som händer.
 
+### Mock
+För workers så körs ofta Classical TDD, medan i Managers så används oftast Mock. Med stubbar kollar man alltid hur States förhåller sig. 
+Med mock används i Arrange-delen mock-object som saknar implementation, och i Assert-delen används verify() för att kolla. Vi kollar inte States, utan snarare om anropen har kommit. 
+
+För att använda mock i Eclipse används Mockito (mockito.org)
+Exempel: Event event = Mockito.mock(Event.class);
 
 ## 5. Refactor mot patterns
