@@ -7,20 +7,23 @@ import java.util.List;
 import com.squeed.kata.nametag.entities.Attendee;
 import com.squeed.kata.nametag.entities.Event;
 
-public class EmptyEvent implements Event {
+public class EventFake implements Event {
 
-	public EmptyEvent(){
-		return;
+	private List<Attendee> a_persons = new ArrayList<>();
+	private Image defaultImage;
+	public EventFake(Attendee a_person, Image defaultImage) {
+		this.a_persons.add(a_person);
+		this.defaultImage = defaultImage;
 	}
 
 	@Override
 	public List<Attendee> getExpectedAttendees() {
-		return new ArrayList<>();
+		return a_persons;
 	}
 
 	@Override
 	public Image getDefaultImage() {
-		// TODO Auto-generated method stub
-		return null;
+		return defaultImage;
 	}
+
 }
