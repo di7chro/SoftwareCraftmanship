@@ -95,11 +95,10 @@ Nu skall den göras på riktigt.
 -   Test doubles är stand-ins för DOC och gör att vi kan isolera units för att testa ordentligt
    
 ### Test Doubles
--   Fake
---  fdgs
--   Stub
--   Mock
--   Spies
+-   Fake. 
+-   Stub. Mer implementerade än Fake. Även med Stub som är det States som hanteras.
+-   Mock. Ramverk används. KAn preparera vissa objekt för att returnera något känt. Medtod-anrop.  
+-   Spies. Övervakar vad som händer.
 
 
 ## 5. Refactor mot patterns
