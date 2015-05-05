@@ -22,7 +22,7 @@ Nytta med TDD
     
 
 ## 2. Forts + ObjectOrientering
-Här skapade vi den andra katan, Bowling Game
+Här skapade vi den andra katan, BowlingKata
 JUnit test Class Lifecycle
 
 Svaret från övningen:
@@ -67,7 +67,7 @@ Black-Box och White-Box testing
 Inom WhiteBox-test har man möjligheten att kunna titta in i lådan för att se hur saker fungerar.
 
 ## 3. Test Double
-Inför detta pas gjorde vi som hemarbete den tredje katan, Poker Kata
+Inför detta pas gjorde vi som hemarbete den tredje katan, PokerKata
 Nu skall den göras på riktigt.
 
 ### Klassdiagram
@@ -90,6 +90,8 @@ Nu skall den göras på riktigt.
 -   Jämför händer
 
 ## 4. Intro till Test Doubles
+Kata som gjordes under detta pass var TagManagerKata
+
 -   Unit-tester prövar en isolerad enhet
 -   När en klass dependar på andra (DOC, Dependent on collaborators) behöver vi isolera dem från testerna
 -   Test doubles är stand-ins för DOC och gör att vi kan isolera units för att testa ordentligt
@@ -107,4 +109,4 @@ Med mock används i Arrange-delen mock-object som saknar implementation, och i A
 För att använda mock i Eclipse används Mockito (mockito.org)
 Exempel: Event event = Mockito.mock(Event.class);
 
-## 5. Refactor mot patterns
+## 5. Refactoring och Clean Code
