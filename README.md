@@ -125,7 +125,9 @@ Bra bok om clean code: Kent Beck: Implementation Patterns
 -   Law of Demeter
 -   Broken Window Syndrome: Om något är helt oc något liten del går sönder, så laga den lilla biten direkt annars blir fel delar snart trasiga.
 
-
+### Software Patterns
+-   Boken Refactoring to patterns av Joshua(?) är kanon.
+-   
 
 
 
