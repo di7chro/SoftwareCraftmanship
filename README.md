@@ -110,3 +110,20 @@ För att använda mock i Eclipse används Mockito (mockito.org)
 Exempel: Event event = Mockito.mock(Event.class);
 
 ## 5. Refactoring och Clean Code
+BDD: Behaviour Driven Development. Att utifrån förklarande exempel mellan olika personer och User Stories kunna komma fram till vilket produkt/funktionalitet som skall utvecklas.
+Cucumber school: att få business att prata med utvecklare.
+Bok: Specification by example av Gojko Adzic
+
+### Clean Code
+Bra bok om clean code: Kent Beck: Implementation Patterns
+-   Vad som anses vara Clean Code beror mycket på den context den befinner sig i.
+-   SKapa tydliga datatyper istället för att skicka runt märkliga datatyper
+-   Läsbar kod är:
+-   -   Readable
+-   -   Changeable
+-   gd
+-   
+
+
+
+
