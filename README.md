@@ -118,11 +118,14 @@ Bok: Specification by example av Gojko Adzic
 Bra bok om clean code: Kent Beck: Implementation Patterns
 -   Vad som anses vara Clean Code beror mycket på den context den befinner sig i.
 -   SKapa tydliga datatyper istället för att skicka runt märkliga datatyper
--   Läsbar kod är:
--   -   Readable
--   -   Changeable
--   gd
--   
+-   Läsbar kod är: Readable, Changeable och Understandable
+-   Clean Code skrivs för människor, inte datorer
+-   DRY: Dont repeat yourself
+-   YAGNI: You aint gonna need it. Själva grunden till TDD
+-   Law of Demeter
+-   Broken Window Syndrome: Om något är helt oc något liten del går sönder, så laga den lilla biten direkt annars blir fel delar snart trasiga.
+
+
 
 
 
